@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="header">
+    <h2>Calculator</h2>
+  </div>
+
+  <div class="container">
+    <form action="/calculate" method="POST">
+      <div class="form-group">
+        <label for="Number One">First Number</label>
+        <input type="text" placeholder="First Number" name="num1" />
+      </div>
+      <br />
+
+      <div class="form-group">
+        <label for="Number Two">Second Number</label>
+        <input type="text" placeholder="Second Number" name="num2" />
+      </div>
+      <br />
+
+      <div class="form-group">
+        <label for="Operation">Operation</label>
+        <select name="operation">
+          <option value="add">Add</option>
+          <option value="subtract">Subtract</option>
+          <option value="multiply">Multiply</option>
+          <option value="divide">Divide</option>
+        </select>
+      </div>
+      <br />
+
+      <input type="submit" value="Calculate" id="calc_btn" class="btn" />
+      <br />
+      <br />
+      <div class="alert">
+        Result: {{ result }}
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

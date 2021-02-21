@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: ingress-resource
+spec:
+  rules:
+  - host: calculator.34.71.240.210.xip.io #replace ip address of your ingress controller
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: calculator-service
+          servicePort: 8080 
